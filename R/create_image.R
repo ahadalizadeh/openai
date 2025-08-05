@@ -33,6 +33,8 @@ create_image <- function(
         size = c("1024x1024", "256x256", "512x512"),
         response_format = c("url", "b64_json"),
         user = NULL,
+               url = "https://api.openai.com/v1/",
+
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -86,7 +88,7 @@ create_image <- function(
 
     task <- "images/generations"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
