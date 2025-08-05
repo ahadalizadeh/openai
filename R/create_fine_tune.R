@@ -61,6 +61,8 @@ create_fine_tune <- function(
         training_file,
         validation_file = NULL,
         model,
+               url = "https://api.openai.com/v1/",
+
         n_epochs = 4,
         batch_size = NULL,
         learning_rate_multiplier = NULL,
@@ -155,7 +157,7 @@ create_fine_tune <- function(
 
     task <- "fine-tunes"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
