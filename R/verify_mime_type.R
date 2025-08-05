@@ -4,8 +4,8 @@ verify_mime_type <- function(result) {
         paste(
             "OpenAI API probably has been changed. If you see this, please",
             "rise an issue at: https://github.com/irudnyts/openai/issues"
-        ) %>%
-            stop()
+        )# %>%
+          #  stop()
     }
 
 }
