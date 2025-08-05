@@ -28,7 +28,7 @@ create_moderation <- function(
         model,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL,
-		url = "https://api.openai.com/v1/",
+		url = "https://api.openai.com/v1/"
 ) {
 
     #---------------------------------------------------------------------------
