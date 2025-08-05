@@ -63,7 +63,7 @@ create_chat_completion<- function(
         model,
         messages = NULL,
         temperature = 1,
-        url = "https://api.openai.com/v1/",
+url = "https://api.openai.com/v1/",
         top_p = 1,
         n = 1,
         stream = FALSE,

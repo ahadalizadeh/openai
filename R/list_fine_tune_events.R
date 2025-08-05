@@ -48,7 +48,7 @@
 #' @export
 list_fine_tune_events <- function(
         fine_tune_id,
-        stream = FALSE,
+        stream = FALSE,url = "https://api.openai.com/v1/",
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -83,7 +83,7 @@ list_fine_tune_events <- function(
     # Build parameters of the request
 
     base_url <- glue::glue(
-        "https://api.openai.com/v1/fine-tunes/{fine_tune_id}/events"
+        "{url}fine-tunes/{fine_tune_id}/events"
     )
 
     headers <- c(

@@ -61,8 +61,7 @@ create_fine_tune <- function(
         training_file,
         validation_file = NULL,
         model,
-               url = "https://api.openai.com/v1/",
-
+url = "https://api.openai.com/v1/",
         n_epochs = 4,
         batch_size = NULL,
         learning_rate_multiplier = NULL,

@@ -38,7 +38,7 @@ create_image_variation <- function(
         n = 1,
         size = c("1024x1024", "256x256", "512x512"),
         response_format = c("url", "b64_json"),
-        user = NULL,
+        user = NULL,url = "https://api.openai.com/v1/",
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -94,7 +94,7 @@ create_image_variation <- function(
 
     task <- "images/variations"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

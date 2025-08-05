@@ -34,7 +34,7 @@ create_edit <- function(
         engine_id = deprecated(),
         model,
         input = '"',
-        url = "https://api.openai.com/v1/",
+url = "https://api.openai.com/v1/",
         instruction,
         temperature = 1,
         top_p = 1,

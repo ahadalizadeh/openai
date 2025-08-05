@@ -32,7 +32,7 @@ create_embedding <- function(
         engine_id = deprecated(),
         model,
         input,       
-        url = "https://api.openai.com/v1/",
+url = "https://api.openai.com/v1/",
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL

@@ -29,7 +29,7 @@
 delete_fine_tune_model <- function(
         model,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
-        openai_organization = NULL
+        openai_organization = NULL,url = "https://api.openai.com/v1/",
 ) {
 
     #---------------------------------------------------------------------------
@@ -55,7 +55,7 @@ delete_fine_tune_model <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- glue::glue("https://api.openai.com/v1/models/{model}")
+    base_url <- glue::glue("{url}models/{model}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

@@ -25,7 +25,7 @@
 #' @export
 upload_file <- function(
         file,
-        purpose = c("search", "answers", "classifications", "fine-tune"),
+        purpose = c("search", "answers", "classifications", "fine-tune"),url = "https://api.openai.com/v1/",
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -67,7 +67,7 @@ upload_file <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- "https://api.openai.com/v1/files"
+    base_url <- "{url}files"
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

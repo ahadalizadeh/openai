@@ -23,7 +23,7 @@
 #' @export
 retrieve_model <- function(
         model,
-        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),url = "https://api.openai.com/v1/",
         openai_organization = NULL
 ) {
 
@@ -50,7 +50,7 @@ retrieve_model <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- glue::glue("https://api.openai.com/v1/models/{model}")
+    base_url <- glue::glue("{url}models/{model}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

@@ -41,7 +41,7 @@ create_image_edit <- function(
         image,
         mask,
         prompt,
-        n = 1,
+        n = 1,url = "https://api.openai.com/v1/",
         size = c("1024x1024", "256x256", "512x512"),
         response_format = c("url", "b64_json"),
         user = NULL,
@@ -112,7 +112,7 @@ create_image_edit <- function(
 
     task <- "images/edits"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

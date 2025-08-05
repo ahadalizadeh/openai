@@ -22,7 +22,7 @@
 #' @family file functions
 #' @export
 delete_file <- function(
-        file_id,
+        file_id,url = "https://api.openai.com/v1/",
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -50,7 +50,7 @@ delete_file <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- glue::glue("https://api.openai.com/v1/files/{file_id}")
+    base_url <- glue::glue("{url}files/{file_id}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

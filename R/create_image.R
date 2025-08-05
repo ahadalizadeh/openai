@@ -33,7 +33,7 @@ create_image <- function(
         size = c("1024x1024", "256x256", "512x512"),
         response_format = c("url", "b64_json"),
         user = NULL,
-               url = "https://api.openai.com/v1/",
+url = "https://api.openai.com/v1/",
 
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL

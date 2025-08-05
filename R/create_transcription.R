@@ -36,7 +36,7 @@ create_transcription <- function(
         prompt = NULL,
         response_format = "json", # json, text, srt, verbose_json, or vtt
         temperature = 0,
-        language = NULL,
+        language = NULL,url = "https://api.openai.com/v1/",
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -104,7 +104,7 @@ create_transcription <- function(
 
     task <- "audio/transcriptions"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

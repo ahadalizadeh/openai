@@ -65,7 +65,7 @@
 create_completion <- function(
         engine_id = deprecated(),
         model,
-        url = "https://api.openai.com/v1/",
+url = "https://api.openai.com/v1/",
         prompt = "<|endoftext|>",
         suffix = NULL,
         max_tokens = 16,

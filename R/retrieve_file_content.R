@@ -19,7 +19,7 @@
 #' @export
 retrieve_file_content <- function(
         file_id,
-        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),url = "https://api.openai.com/v1/",
         openai_organization = NULL
 ) {
 
@@ -46,7 +46,7 @@ retrieve_file_content <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- glue::glue("https://api.openai.com/v1/files/{file_id}/content")
+    base_url <- glue::glue("{url}files/{file_id}/content")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

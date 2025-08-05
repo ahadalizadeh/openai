@@ -21,7 +21,7 @@
 #' @family model functions
 #' @export
 list_models <- function(
-        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),url = "https://api.openai.com/v1/",
         openai_organization = NULL
 ) {
 
@@ -43,7 +43,7 @@ list_models <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- "https://api.openai.com/v1/models"
+    base_url <- "{url}models"
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

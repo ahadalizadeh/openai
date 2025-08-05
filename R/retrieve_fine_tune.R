@@ -46,7 +46,7 @@
 #' @export
 retrieve_fine_tune <- function(
         fine_tune_id,
-        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),url = "https://api.openai.com/v1/",
         openai_organization = NULL
 ) {
 
@@ -74,7 +74,7 @@ retrieve_fine_tune <- function(
     # Build parameters of the request
 
     base_url <- glue::glue(
-        "https://api.openai.com/v1/fine-tunes/{fine_tune_id}"
+        "{url}fine-tunes/{fine_tune_id}"
     )
 
     headers <- c(
