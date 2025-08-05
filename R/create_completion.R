@@ -65,6 +65,7 @@
 create_completion <- function(
         engine_id = deprecated(),
         model,
+        url = "https://api.openai.com/v1/",
         prompt = "<|endoftext|>",
         suffix = NULL,
         max_tokens = 16,
@@ -216,7 +217,7 @@ create_completion <- function(
 
     task <- "completions"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
