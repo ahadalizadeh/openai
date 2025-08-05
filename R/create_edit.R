@@ -34,6 +34,7 @@ create_edit <- function(
         engine_id = deprecated(),
         model,
         input = '"',
+        url = "https://api.openai.com/v1/",
         instruction,
         temperature = 1,
         top_p = 1,
@@ -103,7 +104,7 @@ create_edit <- function(
 
     task <- "edits"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
