@@ -63,6 +63,7 @@ create_chat_completion<- function(
         model,
         messages = NULL,
         temperature = 1,
+        url = "https://api.openai.com/v1/",
         top_p = 1,
         n = 1,
         stream = FALSE,
@@ -175,7 +176,7 @@ create_chat_completion<- function(
 
     task <- "chat/completions"
 
-    base_url <- glue::glue("https://api.openai.com/v1/{task}")
+    base_url <- glue::glue("{url}{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
